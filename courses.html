@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Начать обучение — Финансовая грамотность</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #0b2463;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .content-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .content-left h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .content-left h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .content-left p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .form-right {
+      flex: 1;
+      min-width: 300px;
+      background-color: #f4f6fa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .form-right h3 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #0b2463;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .form-right button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0b2463;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-right button:hover {
+      background-color: #091c4d;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .benefit-box {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    .benefit-number {
+      display: inline-block;
+      background-color: #0b2463;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 50%;
+      margin-bottom: 12px;
+    }
+
+    .audience-section {
+      padding: 60px 20px;
+      background-color: #f9fbfd;
+    }
+
+    .audience-section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .audience-card {
+      display: flex;
+      align-items: flex-start;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      gap: 15px;
+    }
+
+    .audience-card img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .audience-card p {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .learning-section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+    }
+
+    .learning-section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: #0b2463;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .learning-step {
+      background-color: #f9fbfd;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .learning-step h3 {
+      font-size: 20px;
+      color: #0b2463;
+      margin-bottom: 10px;
+    }
+
+    .learning-step p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .audience-card {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="content-left">
+      <h1>Научитесь базовым финансовым навыкам, финансовой грамотности за 5–6 месяцев</h1>
+      <h2>Как начать обучение?</h2>
+      <p>Чтобы начать обучаться, просто зарегистрируйтесь, и мы предоставим вам доступ к курсам по финансовой грамотности. Мы научим вас основам управления личными финансами и инвестированию.</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-box">
+          <span class="benefit-number">1</span>
+          <p>Поймёте, как грамотно распределять личный бюджет</p>
+        </div>
+        <div class="benefit-box">
+          <span class="benefit-number">2</span>
+          <p>Научитесь копить и инвестировать с нуля</p>
+        </div>
+        <div class="benefit-box">
+          <span class="benefit-number">3</span>
+          <p>Избавитесь от финансового стресса и долгов</p>
+        </div>
+        <div class="benefit-box">
+          <span class="benefit-number">4</span>
+          <p>Получите доступ к практическим инструментам и шаблонам</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-right">
+      <h3>Регистрация</h3>
+      <form>
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Эл. почта</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <button type="submit">Начать обучение</button>
+      </form>
+    </div>
+  </div>
+
+  <section class="audience-section">
+    <h2>Кому подойдёт этот курс</h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Иконка студента">
+        <p><strong>Студентам и новичкам:</strong> тем, кто хочет освоить базовые знания и начать путь в финансах с нуля.</p>
+      </div>
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920322.png" alt="Иконка специалиста">
+        <p><strong>Молодым специалистам:</strong> чтобы грамотно распоряжаться доходами и копить без стресса.</p>
+      </div>
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1794/1794779.png" alt="Иконка с долгами">
+        <p><strong>Тем, кто в долгах:</strong> чтобы научиться контролировать расходы и избавиться от финансовой нагрузки.</p>
+      </div>
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4249/4249811.png" alt="Иконка инвестора">
+        <p><strong>Будущим инвесторам:</strong> если вы хотите начать инвестировать, но боитесь ошибиться.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="audience-section">
+    <h2>Кто будет работать с вами на курсе</h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Иконка куратора">
+        <p><strong>Куратор курса:</strong> сопровождает вас на всех этапах обучения, отвечает на вопросы и помогает с организацией учебного процесса.</p>
+      </div>
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Иконка эксперта">
+        <p><strong>Финансовый эксперт:</strong> объясняет сложные темы простым языком и делится реальными кейсами и личным опытом.</p>
+      </div>
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828925.png" alt="Иконка поддержки">
+        <p><strong>Техническая поддержка:</strong> решает любые технические вопросы, чтобы вы могли сосредоточиться только на обучении.</p>
+      </div>
+      <div class="audience-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Иконка сообщества">
+        <p><strong>Ментор-сообщество:</strong> вы получаете доступ к сообществу единомышленников, где можно делиться опытом и получать поддержку.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="reviews-section">
+  <h2>Отзывы о курсе</h2>
+  <div class="reviews-slider">
+    <button class="review-arrow left">&#8592;</button>
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <h3>Анна</h3>
+            <p class="review-role">Бухгалтер с опытом</p>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <h4>Перестала бояться работать с деньгами</h4>
+        <p>Я всегда избегала тем по инвестициям и управлению деньгами. Этот курс дал мне уверенность и чёткую структуру — теперь я спокойно веду личный бюджет и помогаю мужу с планированием.</p>
+        <a href="#">Читать полностью</a>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <h3>Максим</h3>
+            <p class="review-role">Начинающий предприниматель</p>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <h4>Разложил финансы по полочкам</h4>
+        <p>До курса я просто тратил и надеялся на лучшее. Сейчас я веду таблички, понимаю, куда уходят деньги, и готовлюсь к инвестициям. Это перевернуло моё мышление о деньгах.</p>
+        <a href="#">Читать полностью</a>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div>
+            <h3>Светлана</h3>
+            <p class="review-role">HR-директор</p>
+          </div>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <h4>Научилась считать доходность и не попадать в долги</h4>
+        <p>Брала курс ради личного развития, но в итоге получила мощный инструмент для оценки финансовых рисков. Теперь мои инвестиционные решения — это не интуиция, а расчёт.</p>
+        <a href="#">Читать полностью</a>
+      </div>
+    </div>
+    <button class="review-arrow right">&#8594;</button>
+  </div>
+</section>
+
+<style>
+  .reviews-section {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+  }
+
+  .reviews-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #0a1f44;
+  }
+
+  .reviews-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .review-arrow {
+    background-color: #0a1f44;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .review-arrow:hover {
+    background-color: #1e3366;
+  }
+
+  .reviews-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+  }
+
+  .review-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex: 0 0 320px;
+    text-align: left;
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .review-role {
+    font-size: 14px;
+    color: #808080;
+  }
+
+  .review-card h4 {
+    font-size: 18px;
+    color: #0a1f44;
+    margin-bottom: 8px;
+  }
+
+  .review-card p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .review-card a {
+    font-size: 14px;
+    color: #0a5ad4;
+    text-decoration: underline;
+  }
+
+  .stars {
+    color: #fcbf1e;
+    font-size: 18px;
+  }
+
+  /* Optional: Scrollbar styling for horizontal reviews */
+  .reviews-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .reviews-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+</style>
+
+<script>
+  const container = document.querySelector('.reviews-container');
+  document.querySelector('.review-arrow.left').onclick = () => {
+    container.scrollBy({ left: -350, behavior: 'smooth' });
+  };
+  document.querySelector('.review-arrow.right').onclick = () => {
+    container.scrollBy({ left: 350, behavior: 'smooth' });
+  };
+</script>
+
+ <section class="learning-section">
+    <h2>Как будет проходить обучение</h2>
+    <div class="learning-grid">
+      <div class="learning-step">
+        <h3>1. Онлайн-доступ к платформе</h3>
+        <p>Сразу после регистрации вы получите доступ ко всем обучающим материалам на нашей платформе.</p>
+      </div>
+      <div class="learning-step">
+        <h3>2. Обучение в удобном темпе</h3>
+        <p>Вы проходите уроки в удобное для вас время. Уроки короткие, понятные, с практикой и тестами.</p>
+      </div>
+      <div class="learning-step">
+        <h3>3. Поддержка куратора и экспертов</h3>
+        <p>В течение курса вы можете задать вопросы кураторам или экспертам, получить советы и помощь.</p>
+      </div>
+      <div class="learning-step">
+        <h3>4. Закрепление знаний на практике</h3>
+        <p>Вы получаете шаблоны, калькуляторы и инструкции, чтобы внедрять знания в свою жизнь уже в процессе.</p>
+      </div>
+    </div>
+  </section>
+  
+   <div class="container">
+    <!-- Программа обучения -->
+    <div class="program-section">
+      <h2 class="program-title">Программа обучения: Финансы с нуля</h2>
+      <div class="program-details">
+        <p>10 интерактивных видео</p>
+        <p>4 бизнес кейса</p>
+        <p>5 практических заданий</p>
+        <p>5 тренажеров</p>
+      </div>
+    </div>
+
+    <!-- Блоки курса -->
+    <div class="course-block">
+      <div class="block-header" onclick="toggleBlock('block-1')">
+        <span>Блок 1: Основы финансовой грамотности</span>
+        <span class="arrow" id="arrow-1">▼</span>
+      </div>
+      <div class="block-content" id="block-1">
+        <p><strong>Цель:</strong> Помочь понять базовые принципы личных финансов.</p>
+        <ul>
+          <li><strong>Интерактивные видео:</strong> Введение в личные финансы, Принципы грамотного планирования бюджета, Психология денег.</li>
+          <li><strong>Бизнес кейс:</strong> Как планирование бюджета помогает бизнесу и личным финансам.</li>
+          <li><strong>Практическое задание:</strong> Составить свой первый личный бюджет.</li>
+          <li><strong>Тренажёр:</strong> Распределение доходов и расходов с помощью шаблона.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="course-block">
+      <div class="block-header" onclick="toggleBlock('block-2')">
+        <span>Блок 2: Накопления и инвестиции</span>
+        <span class="arrow" id="arrow-2">▼</span>
+      </div>
+      <div class="block-content" id="block-2">
+        <p><strong>Цель:</strong> Научить копить деньги и инвестировать с нуля.</p>
+        <ul>
+          <li><strong>Интерактивные видео:</strong> Основы накоплений, Введение в инвестиции, Долгосрочные vs краткосрочные инвестиции.</li>
+          <li><strong>Бизнес кейс:</strong> Пример успешного инвестора, который начал с небольших накоплений.</li>
+          <li><strong>Практическое задание:</strong> Построить план накоплений на 6 месяцев, Составить инвестиционный портфель.</li>
+          <li><strong>Тренажёр:</strong> Расчёт доходности инвестиционного портфеля.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="course-block">
+      <div class="block-header" onclick="toggleBlock('block-3')">
+        <span>Блок 3: Избавление от долгов и финансовый стресс</span>
+        <span class="arrow" id="arrow-3">▼</span>
+      </div>
+      <div class="block-content" id="block-3">
+        <p><strong>Цель:</strong> Помочь избавиться от долгов и научиться управлять стрессом, связанным с финансами.</p>
+        <ul>
+          <li><strong>Интерактивные видео:</strong> Как избавиться от долгов, Управление финансовым стрессом.</li>
+          <li><strong>Бизнес кейс:</strong> История человека, который расплатился с долгами и построил финансовую независимость.</li>
+          <li><strong>Практическое задание:</strong> Разработать план по сокращению долгов и составить график выплат.</li>
+          <li><strong>Тренажёр:</strong> Создание финансовой подушки безопасности.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="course-block">
+      <div class="block-header" onclick="toggleBlock('block-4')">
+        <span>Блок 4: Практические инструменты и шаблоны</span>
+        <span class="arrow" id="arrow-4">▼</span>
+      </div>
+      <div class="block-content" id="block-4">
+        <p><strong>Цель:</strong> Дать доступ к практическим инструментам для эффективного управления личными финансами.</p>
+        <ul>
+          <li><strong>Интерактивные видео:</strong> Как пользоваться финансовыми инструментами, Обзор бесплатных онлайн инструментов.</li>
+          <li><strong>Бизнес кейс:</strong> Как инструменты управления финансами помогли малому бизнесу.</li>
+          <li><strong>Практическое задание:</strong> Использование шаблона бюджета и калькулятора для планирования.</li>
+          <li><strong>Тренажёр:</strong> Применение финансовых инструментов для оптимизации расходов.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    /* Стиль для программы обучения */
+    .program-section {
+      background-color: #fff;
+      padding: 40px;
+      margin-top: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .program-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .program-details {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    /* Стиль для блоков курса */
+    .course-block {
+      background-color: #f9f9f9;
+      margin: 10px 0;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .block-header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .arrow.open {
+      transform: rotate(180deg);
+    }
+
+    .block-content {
+      display: none;
+      padding-top: 10px;
+    }
+
+    .block-content ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    /* Стиль для кнопок */
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <script>
+    function toggleBlock(blockId) {
+      const blockContent = document.getElementById(blockId);
+      const arrow = document.getElementById("arrow-" + blockId.split('-')[1]);
+
+      if (blockContent.style.display === "block") {
+        blockContent.style.display = "none";
+        arrow.textContent = "▼";
+      } else {
+        blockContent.style.display = "block";
+        arrow.textContent = "▲";
+      }
+    }
+  </script>
+  
+<section class="payment-section">
+  <style>
+    .payment-section {
+      background-color: #f4f6fa;
+      padding: 60px 20px;
+    }
+
+    .payment-header {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #0b2463;
+    }
+
+    .payment-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .payment-form {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      flex: 1;
+    }
+
+    .payment-form h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #0b2463;
+    }
+
+    .payment-group {
+      margin-bottom: 20px;
+    }
+
+    .payment-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .payment-group input {
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #cccccc;
+      font-size: 14px;
+    }
+
+    .payment-button {
+      width: 100%;
+      padding: 15px;
+      background-color: #0b2463;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .payment-button:hover {
+      background-color: #091c4d;
+    }
+
+    .payment-info {
+      flex: 1;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .payment-info .badge {
+      background-color: #0b2463;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    .payment-details {
+      margin-top: 20px;
+    }
+
+    .payment-details p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .payment-details .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0b2463;
+      margin-top: 20px;
+    }
+
+    .payment-icons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .payment-icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .payment-icon img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .payment-icon p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .payment-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <div class="payment-header">Оплата курса</div>
+  <div class="payment-container">
+    <div class="payment-form">
+      <h3>Записаться на консультацию или оплатить курс</h3>
+      <div class="payment-group">
+        <label for="name">Имя</label>
+        <input type="text" id="name" placeholder="Ваше имя" />
+      </div>
+      <div class="payment-group">
+        <label for="phone">Телефон</label>
+        <input type="text" id="phone" placeholder="Ваш телефон" />
+      </div>
+      <div class="payment-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Ваш Email" />
+      </div>
+      <button class="payment-button">Записаться на консультацию</button>
+      <button class="payment-button">Оплатить онлайн</button>
+    </div>
+
+    <div class="payment-info">
+      <div class="badge">-5% за оплату онлайн</div>
+      <div class="badge">Начало обучения 21 апреля</div>
+      <div class="payment-details">
+        <p>Обучение можно оплатить сразу или воспользоваться беспроцентной рассрочкой на 12 месяцев.</p>
+        <div class="price">45670 тг/мес</div>
+      </div>
+
+      <div class="payment-icons">
+        <div class="payment-icon">
+          
+          <p>Оформите налоговый вычет и верните 13% от стоимости обучения</p>
+        </div>
+        <div class="payment-icon">
+         
+          <p>Поддержка куратора в течение одного года</p>
+        </div>
+        <div class="payment-icon">
+          
+          <p>Доступ к курсу навсегда. Обновления бесплатны!</p>
+        </div>
+        <div class="payment-icon">
+          <p>Диплом о профессиональной переподготовке подтвердит ваши навыки</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+  
+
+
+</body>
+</html>
+
+
+ 
+
+
+
+
+
+
+
+

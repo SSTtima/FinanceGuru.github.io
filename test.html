@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Тест по финансовой грамотности</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6fa;
+      color: #0b2463;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .question {
+      margin-bottom: 25px;
+    }
+
+    .question p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .question label {
+      display: block;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #ffd600;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #e6c200;
+    }
+
+    .result {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+
+    .course-link {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .course-link a {
+      background-color: #ffd600;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #0b2463;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .course-link a:hover {
+      background-color: #e6c200;
+    }
+
+    .progress {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Тест на уровень финансовой грамотности</h1>
+    <form id="quizForm">
+      <div id="questionsContainer"></div>
+      <button type="submit">Показать результат</button>
+    </form>
+    <div class="result" id="result"></div>
+    <div class="course-link" id="courseLink">
+      <a href="courses.html">Перейти к обучению</a>
+    </div>
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <script>
+    const questions = [
+      "Что такое личный бюджет?",
+      "Зачем нужно копить деньги?",
+      "Что такое финансовая подушка безопасности?",
+      "Сколько процентов от дохода желательно откладывать?",
+      "Что такое инвестиции?",
+      "Какие активы считаются низкорискованными?",
+      "Что означает термин 'доход пассивный'?",
+      "Какой документ отражает ваши расходы и доходы?",
+      "Что означает 'диверсификация' в инвестициях?",
+      "Какой уровень долга считается безопасным?",
+      "Что означает инфляция?",
+      "Зачем вести учёт расходов?",
+      "Какая сумма считается оптимальной для начала инвестирования?",
+      "Что такое кредитная история?",
+      "Как влияет процентная ставка на кредит?",
+      "Какие цели лучше достигать с помощью накоплений?",
+      "Что такое депозит в банке?",
+      "Какие бывают виды инвестиций?",
+      "Какой срок лучше для инвестиций — короткий или длинный?",
+      "Зачем нужно страхование?"
+    ];
+
+    const questionsContainer = document.getElementById("questionsContainer");
+    const result = document.getElementById("result");
+    const courseLink = document.getElementById("courseLink");
+    const progress = document.getElementById("progress");
+
+    // Генерация вопросов
+    questions.forEach((question, index) => {
+      const qDiv = document.createElement("div");
+      qDiv.classList.add("question");
+      qDiv.innerHTML = `
+        <p>${index + 1}. ${question}</p>
+        <label><input type="radio" name="q${index}" value="1"> Знаю</label>
+        <label><input type="radio" name="q${index}" value="0"> Не уверен(а)</label>
+        <label><input type="radio" name="q${index}" value="0"> Не знаю</label>
+      `;
+      questionsContainer.appendChild(qDiv);
+    });
+
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let score = 0;
+      let answered = 0;
+
+      questions.forEach((_, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (selected) {
+          score += parseInt(selected.value);
+          answered++;
+        }
+      });
+
+      if (answered < questions.length) {
+        result.textContent = "Пожалуйста, ответьте на все вопросы.";
+        return;
+      }
+
+      const percentage = (score / questions.length) * 100;
+      let recommendation = "";
+
+      if (percentage >= 85) {
+        recommendation = "У вас высокий уровень финансовой грамотности! Рекомендуем перейти к продвинутому курсу.";
+      } else if (percentage >= 60) {
+        recommendation = "У вас средний уровень. Начните с базового курса и углубляйтесь постепенно.";
+      } else {
+        recommendation = "У вас начальный уровень. Начните с нуля и пройдите курс последовательно.";
+      }
+
+      result.textContent = `Ваш результат: ${score} из ${questions.length} (${Math.round(percentage)}%). ${recommendation}`;
+      courseLink.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
+

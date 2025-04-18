@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="FINANCEMAN.png" type="image/png" />
+  <title>Финансовая грамотность с нуля</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6fa;
+      color: #0b2463;
+    }
+
+    header {
+      background-color: #0b2463;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .header-content img {
+      height: 110px;
+    }
+
+    .header-text {
+      text-align: center;
+      max-width: 700px;
+    }
+
+    .header-text h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .header-text p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .header-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-buttons button {
+      background-color: #ffd600;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .header-buttons button:hover {
+      background-color: #e6c200;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .feature {
+      background-color: #fff8dc;
+      border: 2px solid #ffd600;
+      border-radius: 12px;
+      padding: 25px 20px;
+      width: 280px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #0b2463;
+    }
+
+    .feature p {
+      font-size: 15px;
+      color: #333333;
+    }
+
+    .about-section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    footer {
+      background-color: #0b2463;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    .footer-content p {
+      margin: 6px 0;
+    }
+
+    .map-container {
+      margin-top: 20px;
+    }
+
+    iframe {
+      border: 0;
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature {
+        width: 90%;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-content img {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="Logo.png" alt="Логотип">
+      <div class="header-text">
+        <h1>Научись управлять деньгами — начни с нуля</h1>
+        <p>Простой путь к финансовой свободе через обучение, инструменты и поддержку</p>
+        <div class="header-buttons">
+          <button onclick="location.href='courses.html'">Начать обучение</button>
+          <button onclick="location.href='test.html'">Пройти тест</button>
+          <button onclick="location.href='budget.html'">Рассчитать бюджет</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Что ты получишь</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Финансовая стабильность</h3>
+        <p>Научись планировать бюджет и тратить разумно — начни с основ.</p>
+      </div>
+      <div class="feature">
+        <h3>Инвестиции без страха</h3>
+        <p>Пошаговые инструкции, как начать инвестировать, даже с 10 000 ₸.</p>
+      </div>
+      <div class="feature">
+        <h3>Готовые решения</h3>
+        <p>Чек-листы, курсы и калькуляторы, чтобы ты сразу применял знания.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>О проекте</h2>
+    <p>Этот сайт создан, чтобы помочь каждому разобраться в личных финансах — от планирования бюджета до инвестиций. Мы делаем знания доступными и практичными.</p>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p><strong>Финансовая грамотность с нуля</strong></p>
+      <p>Email: financeguru@gmail.com</p>
+      <p>Телефон: +7-707-406-61-07</p>
+      <p>© 2025. Все права защищены.</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.1717863078373!2d76.89103787585625!3d43.23894967112657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883698e31f7b3c3%3A0x9f8cc90f518b8b72!2z0JHQtdC70YzQsdC40L3QuNC5INC60L7QvNC_0L7RgNGD0YHRgtCw0L0!5e0!3m2!1sru!2skz!4v1713340915486!5m2!1sru!2skz"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

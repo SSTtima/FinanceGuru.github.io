@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Рассчитать бюджет — Финансовая грамотность с нуля</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6fa;
+      color: #0b2463;
+    }
+
+    header {
+      background-color: #0b2463;
+      padding: 50px 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .container h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #ffd600;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 30px;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #e6c200;
+    }
+
+    .results {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff8dc;
+      border-left: 5px solid #ffd600;
+      border-radius: 8px;
+    }
+
+    .results h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #0b2463;
+      color: #ffffff;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Рассчитай свой личный бюджет</h1>
+    <p>Пойми, куда уходят деньги и как начать копить</p>
+  </header>
+
+  <div class="container">
+    <h2>Финансовый калькулятор</h2>
+
+    <label for="income">Месячный доход (₸)</label>
+    <input type="number" id="income" placeholder="Например, 300000" />
+
+    <label for="fixed">Фиксированные расходы (аренда, кредиты и т.д.)</label>
+    <input type="number" id="fixed" placeholder="Например, 150000" />
+
+    <label for="variable">Переменные расходы (еда, транспорт, покупки)</label>
+    <input type="number" id="variable" placeholder="Например, 80000" />
+
+    <label for="savings">Цель откладывать (%)</label>
+    <input type="number" id="savings" placeholder="Например, 20" />
+
+    <button onclick="calculateBudget()">Рассчитать</button>
+
+    <div class="results" id="results" style="display: none;"></div>
+  </div>
+
+  <footer>
+    <p><strong>Финансовая грамотность с нуля</strong> — помоги себе управлять деньгами</p>
+    <p>© 2025</p>
+  </footer>
+
+  <script>
+    function calculateBudget() {
+      const income = parseFloat(document.getElementById('income').value);
+      const fixed = parseFloat(document.getElementById('fixed').value);
+      const variable = parseFloat(document.getElementById('variable').value);
+      const savingsPercent = parseFloat(document.getElementById('savings').value);
+      const resultsDiv = document.getElementById('results');
+
+      if (isNaN(income) || isNaN(fixed) || isNaN(variable) || isNaN(savingsPercent)) {
+        alert("Пожалуйста, заполните все поля корректно.");
+        return;
+      }
+
+      const totalExpenses = fixed + variable;
+      const savings = (income * savingsPercent) / 100;
+      const balance = income - totalExpenses - savings;
+
+      let advice = "";
+      if (balance < 0) {
+        advice = "⚠️ Расходы превышают доход. Попробуй сократить переменные траты или пересмотри цель накоплений.";
+      } else if (balance < income * 0.1) {
+        advice = "💡 Бюджет почти сбалансирован. Попробуй повысить сбережения или немного сократить расходы.";
+      } else {
+        advice = "✅ Отличный результат! У тебя хороший финансовый резерв.";
+      }
+
+      resultsDiv.style.display = 'block';
+      resultsDiv.innerHTML = `
+        <h3>Результаты:</h3>
+        <p><strong>Доход:</strong> ${income.toLocaleString()} ₸</p>
+        <p><strong>Фиксированные расходы:</strong> ${fixed.toLocaleString()} ₸</p>
+        <p><strong>Переменные расходы:</strong> ${variable.toLocaleString()} ₸</p>
+        <p><strong>Цель сбережений:</strong> ${savings.toLocaleString()} ₸ (${savingsPercent}%)</p>
+        <p><strong>Остаток после расходов и накоплений:</strong> ${balance.toLocaleString()} ₸</p>
+        <p><em>${advice}</em></p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
